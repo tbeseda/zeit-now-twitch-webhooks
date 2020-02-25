@@ -4,5 +4,8 @@
   "description": "subscribe to twitch webhooks",
   "devDependencies": {
     "now": "17.0.4"
+  },
+  "dependencies": {
+    "analytics-node": "^3.4.0-beta.1"
   }
 }

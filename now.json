@@ -1,6 +1,7 @@
 {
   "public": false,
   "env": {
+    "SEGMENT_WRITE_KEY": "@segment-write-key",
     "TWITCH_CLIENT_ID": "@twitch-client-id",
     "TWITCH_CLIENT_SECRET": "@twitch-client-secret",
     "TWITCH_CLIENT_BEARER": "@twitch-client-bearer"
