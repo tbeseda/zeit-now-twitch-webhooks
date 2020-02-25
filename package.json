@@ -1,0 +1,8 @@
+{
+  "name": "zeit-now-twitch-webhooks",
+  "version": "1.0.0",
+  "description": "subscribe to twitch webhooks",
+  "devDependencies": {
+    "now": "17.0.4"
+  }
+}
