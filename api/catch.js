@@ -1,5 +1,5 @@
 const Analytics = require('analytics-node');
-const analytics = new Analytics(process.env.SEGMENT_WRITE_KEY, { flushAt: 1 });
+const analytics = new Analytics(process.env.SEGMENT_WRITE_KEY);
 
 module.exports = (request, response) => {
   console.log('Catching Wbhook');
@@ -13,7 +13,9 @@ module.exports = (request, response) => {
       properties: request.query,
     });
 
-    response.send(request.query['hub.challenge']);
+    analytics.flush((error, batch) => {
+      response.send(request.query['hub.challenge']);
+    });
   } else {
     if (request.body) {
       console.log('Webhook payload', request.body);
@@ -32,6 +34,8 @@ module.exports = (request, response) => {
       });
     }
 
-    response.send('teacup');
+    analytics.flush((error, batch) => {
+      response.send('teacup');
+    });
   }
 };
